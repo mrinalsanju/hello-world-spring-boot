@@ -8,7 +8,7 @@ WORKDIR /app
 COPY hello-world-spring-boot-1.0.0.jar app.jar
 
 # Expose the application port (adjust if necessary)
-EXPOSE 8080
+EXPOSE 8081:8080
 
 # Command to run the JAR file
 ENTRYPOINT ["java", "-jar", "app.jar"]

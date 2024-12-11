@@ -9,7 +9,7 @@ ENV PATH=$JAVA_HOME/bin:$PATH
 WORKDIR /app
 
 # Optional: Copy your Java application to the container
-# COPY ./your-app.jar /app/your-app.jar
+# COPY ./hello-world-spring-boot-1.0.0.jar /app/hello-world-spring-boot-1.0.0.jar
 
 # Default command to display the Java version
 CMD ["java", "-version"]

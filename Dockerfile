@@ -1,15 +1,14 @@
-# Use the official OpenJDK 17 base image
-FROM openjdk:17-jdk-slim
+# Use an OpenJDK base image
+FROM openjdk:17-jdk-alpine
 
-# Set environment variables for Java
-ENV JAVA_HOME=/usr/local/openjdk-17
-ENV PATH=$JAVA_HOME/bin:$PATH
-
-# Optional: Add a directory for application files
+# Set the working directory inside the container
 WORKDIR /app
 
-# Optional: Copy your Java application to the container
-# COPY ./hello-world-spring-boot-1.0.0.jar /app/hello-world-spring-boot-1.0.0.jar
+# Copy the JAR file into the container
+COPY hello-world-spring-boot-1.0.0.jar app.jar
 
-# Default command to display the Java version
-CMD ["java", "-version"]
+# Expose the application port (adjust if necessary)
+EXPOSE 8080
+
+# Command to run the JAR file
+ENTRYPOINT ["java", "-jar", "app.jar"]
